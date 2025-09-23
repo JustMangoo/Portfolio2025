@@ -1,9 +1,9 @@
 // types
 export type Project = {
-  slug: string; // URL, e.g. "vaulto"
-  title: string; // "Vaulto"
-  bg: string; // background image url (imported)
-  thumb: string; // thumbnail image url (imported)
+  slug: string; // URL
+  title: string;
+  bg: string; // background image url
+  thumb: string; // thumbnail image url
   summary?: string; // optional blurb for cards
   // put per-case custom fields as needed:
   roles?: string[];
@@ -13,7 +13,10 @@ export type Project = {
 // assets
 import VaultoBg from "../assets/images/Vaulto-bg.png";
 import VaultoMock from "../assets/images/Vaulto-mockup.png";
-// import NextBg from "..."; import NextMock from "...";
+import PegazaBg from "../assets/images/Pegaza-bg.png";
+import PegazaMock from "../assets/images/Pegaza-mockup.png";
+import ArtBg from "../assets/images/Art-bg.png";
+import ArtMock from "../assets/images/Art-mockup.png";
 
 export const projects: Project[] = [
   {
@@ -28,17 +31,17 @@ export const projects: Project[] = [
   {
     slug: "pegaza-pagalms",
     title: "Pegaza Pagalms",
-    bg: VaultoBg,
-    thumb: VaultoMock,
+    bg: PegazaBg,
+    thumb: PegazaMock,
     summary: "Crypto vault UX & responsive Webflow build",
     roles: ["UX", "Web design", "Frontend"],
     tech: ["React", "Tailwind"],
   },
   {
     slug: "Art-is",
-    title: "ArtU+2019is",
-    bg: VaultoBg,
-    thumb: VaultoMock,
+    title: "Art'is",
+    bg: ArtBg,
+    thumb: ArtMock,
     summary: "Crypto vault UX & responsive Webflow build",
     roles: ["UX", "Web design", "Frontend"],
     tech: ["React", "Tailwind"],

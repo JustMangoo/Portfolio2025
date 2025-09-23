@@ -15,7 +15,7 @@ export default function WorkCard({ p }: { p: Project }) {
       </div>
 
       <img
-        className="h-80 w-auto self-center"
+        className="h-100 w-auto self-center"
         src={p.thumb}
         alt={`${p.title} thumbnail`}
       />

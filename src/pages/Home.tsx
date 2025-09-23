@@ -78,7 +78,7 @@ export default function Home() {
       </section>
       <section
         id="about"
-        className="py-32 px-16 flex justify-center items-center gap-2"
+        className="py-32 px-2 sm:px-8 lg:px-16 flex justify-center items-center gap-2"
       >
         <img src={ProfileImage} alt="Profile Image" className="h-64" />
         <div className=" text-xl flex flex-col max-w-2xl gap-5">
@@ -113,14 +113,14 @@ export default function Home() {
       </section>
       <section
         id="skills"
-        className=" flex flex-col p-16 justify-center items-center py-16 w-full"
+        className=" flex flex-col p-8 lg:p-16 justify-center items-center  w-full"
       >
         <header>
           <h2 className="text-9xl font-display font-bold text-primary uppercase">
             Skills
           </h2>
         </header>
-        <div className="flex w-full gap-16">
+        <div className="flex flex-col md:flex-row w-full gap-6 lg:gap-16">
           {skillItems.map((item) => (
             <div
               key={item.category}
