@@ -1,0 +1,127 @@
+@import "tailwindcss";
+@import "tailwindcss/preflight.css" layer(base);
+
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("./assets/fonts/ClashDisplay-Variable.ttf") format("truetype");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ClashGrotesk";
+  src: url("./assets/fonts/ClashGrotesk-Variable.ttf") format("truetype");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-primary: #f8e7ff;
+  --color-secondary: #0c0010;
+  --font-display: "ClashDisplay", ui-sans-serif, system-ui, sans-serif;
+  --font-regular: "ClashGrotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --size-unit: 16; /* design body size */
+  --size-container-ideal: 1440; /* design width */
+  --size-container-min: 992px;
+  --size-container-max: 1920px;
+  --size-container: clamp(
+    var(--size-container-min),
+    100vw,
+    var(--size-container-max)
+  );
+  --size-font: calc(
+    var(--size-container) / (var(--size-container-ideal) / var(--size-unit))
+  );
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  :root {
+    --size-container-ideal: 834;
+    --size-container-min: 768px;
+    --size-container-max: 991px;
+  }
+}
+/* Mobile Landscape */
+@media (max-width: 767px) {
+  :root {
+    --size-container-ideal: 390;
+    --size-container-min: 480px;
+    --size-container-max: 767px;
+  }
+}
+/* Mobile Portrait */
+@media (max-width: 479px) {
+  :root {
+    --size-container-ideal: 440;
+    --size-container-min: 0px;
+    --size-container-max: 479px;
+  }
+}
+
+/* Make rems fluid */
+html {
+  font-size: var(--size-font);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0c0010;
+}
+
+@layer utilities {
+  .corner-frame {
+    --len: 1rem;
+    --thick: 4px;
+    background-repeat: no-repeat;
+    background-image:
+      /* top-left */ linear-gradient(
+        currentColor,
+        currentColor
+      ),
+      linear-gradient(currentColor, currentColor),
+      /* top-right */ linear-gradient(currentColor, currentColor),
+      linear-gradient(currentColor, currentColor),
+      /* bottom-left */ linear-gradient(currentColor, currentColor),
+      linear-gradient(currentColor, currentColor),
+      /* bottom-right*/ linear-gradient(currentColor, currentColor),
+      linear-gradient(currentColor, currentColor);
+    background-size: var(--len) var(--thick), var(--thick) var(--len),
+      var(--len) var(--thick), var(--thick) var(--len), var(--len) var(--thick),
+      var(--thick) var(--len), var(--len) var(--thick), var(--thick) var(--len);
+    background-position: left top, left top, right top, right top, left bottom,
+      left bottom, right bottom, right bottom;
+    transition: background-size 0.15s ease-in-out;
+  }
+
+  .corner-frame-hover:hover {
+    --len: 1.3rem;
+  }
+
+  .corner-frame-top {
+    --len: 0.75rem;
+    --thick: 4px;
+    background-repeat: no-repeat;
+    background-image:
+      /* top-left */ linear-gradient(
+        currentColor,
+        currentColor
+      ),
+      linear-gradient(currentColor, currentColor),
+      /* top-right */ linear-gradient(currentColor, currentColor),
+      linear-gradient(currentColor, currentColor);
+    background-size: var(--len) var(--thick), var(--thick) var(--len),
+      var(--len) var(--thick), var(--thick) var(--len);
+    background-position: left top, left top, right top, right top;
+    transition: background-size 0.15s ease-in-out;
+  }
+
+  .corner-frame-top-hover:hover {
+    --len: 1rem;
+  }
+}
