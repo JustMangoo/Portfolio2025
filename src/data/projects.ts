@@ -4,10 +4,11 @@ export type Project = {
   title: string;
   bg: string; // background image url
   thumb: string; // thumbnail image url
-  summary?: string; // optional blurb for cards
-  // put per-case custom fields as needed:
+  //per-case custom fields as needed:
   roles?: string[];
   tech?: string[];
+  industry?: string;
+  year?: number;
 };
 
 // assets
@@ -24,27 +25,30 @@ export const projects: Project[] = [
     title: "Vaulto",
     bg: VaultoBg,
     thumb: VaultoMock,
-    summary: "Crypto vault UX & responsive Webflow build",
-    roles: ["UX", "Web design", "Frontend"],
-    tech: ["React", "Tailwind"],
+    roles: ["Design", "Frontend", "Backend"],
+    tech: ["VueJS", "MongoDB"],
+    industry: "Creative Productivity",
+    year: 2025,
   },
   {
-    slug: "pegaza-pagalms",
+    slug: "pegazapagalms",
     title: "Pegaza Pagalms",
     bg: PegazaBg,
     thumb: PegazaMock,
-    summary: "Crypto vault UX & responsive Webflow build",
-    roles: ["UX", "Web design", "Frontend"],
-    tech: ["React", "Tailwind"],
+    roles: ["Frontend"],
+    tech: ["Webflow", "Javascript"],
+    industry: "Event Hosting",
+    year: 2024,
   },
   {
-    slug: "Art-is",
+    slug: "artis",
     title: "Art'is",
     bg: ArtBg,
     thumb: ArtMock,
-    summary: "Crypto vault UX & responsive Webflow build",
-    roles: ["UX", "Web design", "Frontend"],
-    tech: ["React", "Tailwind"],
+    roles: ["Frontend", "Backend"],
+    tech: ["VueJS", "Laravel"],
+    industry: "E-commerce",
+    year: 2024,
   },
 ];
 

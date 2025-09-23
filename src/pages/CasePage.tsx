@@ -1,10 +1,13 @@
 import { useParams, Link } from "react-router-dom";
 import { projectBySlug } from "../data/projects";
-import VaultoCase from "./project-pages/VaultoCase"; // example
+import VaultoCase from "./project-pages/VaultoCase";
+import PegazaCase from "./project-pages/PegazaCase";
+import ArrowDown from "../assets/icons/Arrow-down.svg";
 
 const customPages: Record<string, React.FC | undefined> = {
   vaulto: VaultoCase,
-  // nextcase: NextCasePage,
+  pegazapagalms: PegazaCase,
+  artis: VaultoCase,
 };
 
 export default function CasePage() {
@@ -25,21 +28,52 @@ export default function CasePage() {
   const Custom = customPages[slug];
 
   return (
-    <article className="min-h-screen p-8 font-display">
-      <header className="mb-8">
-        <h1 className="text-6xl font-bold uppercase">{p.title}</h1>
-        {p.summary && <p className="mt-2 text-lg opacity-80">{p.summary}</p>}
-        <div className="mt-4 flex gap-4 text-sm opacity-70">
-          {p.roles?.length ? <p>Roles: {p.roles.join(", ")}</p> : null}
-          {p.tech?.length ? <p>Tech: {p.tech.join(", ")}</p> : null}
-        </div>
-      </header>
-
-      {/* Hero image / bg */}
+    <article className="flex flex-col  min-h-screen p-4 md:p-16 font-display font-medium text-xl">
       <div
         style={{ ["--bg" as any]: `url(${p.bg})` }}
-        className="mb-8 h-72 bg-cover bg-center rounded-lg [background-image:var(--bg)]"
+        className="mb-8 h-72 bg-cover bg-center [background-image:var(--bg)]"
       />
+      <header className="mb-32 flex flex-col gap-8 justify-center">
+        <h1 className="text-9xl font-bold uppercase text-center">{p.title}</h1>
+        <div className="mt-4 grid grid-cols-2 gap-y-8 lg:flex gap-4 text-2xl justify-between">
+          {p.roles?.length ? (
+            <div>
+              <div className="flex items-center gap-4 opacity-70">
+                <p>Roles</p>
+                <img className="h-8" src={ArrowDown} alt="arrow down icon" />
+              </div>
+              <p>{p.roles.join(", ")}</p>
+            </div>
+          ) : null}
+          {p.tech?.length ? (
+            <div>
+              <div className="flex items-center gap-4 opacity-70">
+                <p>Tech</p>
+                <img className="h-8" src={ArrowDown} alt="arrow down icon" />
+              </div>
+              <p>{p.tech.join(", ")}</p>
+            </div>
+          ) : null}
+          {p.industry ? (
+            <div>
+              <div className="flex items-center gap-4 opacity-70">
+                <p>Industry</p>
+                <img className="h-8" src={ArrowDown} alt="arrow down icon" />
+              </div>
+              <p>{p.industry}</p>
+            </div>
+          ) : null}
+          {p.year ? (
+            <div>
+              <div className="flex items-center gap-4 opacity-70">
+                <p>Tech</p>
+                <img className="h-8" src={ArrowDown} alt="arrow down icon" />
+              </div>
+              <p>{p.year}</p>
+            </div>
+          ) : null}
+        </div>
+      </header>
 
       {/* Custom per-case content */}
       {Custom ? (

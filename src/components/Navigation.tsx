@@ -31,12 +31,11 @@ export default function Navigation() {
     } else {
       // Already on home, scroll now
       scrollToHash(hash);
-      // keep URL in sync
       history.pushState({}, "", hash);
     }
   };
   return (
-    <nav className="absolute z-10 top-16 right-16 bg-primary text-secondary font-display font-bold text-base inline-flex flex-col gap-2">
+    <nav className="fixed z-10 top-16 right-16 shadow-xl bg-primary text-secondary font-display font-bold text-base inline-flex flex-col gap-2">
       <div className="flex items-center justify-between pointer">
         <button
           type="button"
