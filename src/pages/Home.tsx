@@ -1,5 +1,7 @@
 import Chevron from "../assets/icons/Chevron.svg";
 import ProfileImage from "../assets/images/profile-image.png";
+import VaultoBg from "../assets/images/Vaulto-bg.png";
+import VaultoMockup from "../assets/images/Vaulto-mockup.png";
 
 import { useEffect, useState } from "react";
 
@@ -102,6 +104,51 @@ export default function Home() {
             Works
           </h2>
         </header>
+
+        <div
+          style={{ ["--vaulto" as any]: `url(${VaultoBg})` }}
+          className="flex flex-col h-fit w-full gap-8 p-8 bg-cover bg-center
+             [background-image:var(--vaulto)]"
+        >
+          <div className="flex items-center font-display text-4xl font-bold">
+            <img src={Chevron} alt="Chevron" className="h-8 w-auto" />
+            <h3>Vaulto</h3>
+          </div>
+          <img
+            className="h-96 md:h-96 w-auto self-center"
+            src={VaultoMockup}
+            alt="vaulto case thumbnail"
+          />
+          <div className="flex justify-end">
+            <div className="corner-frame-left corner-frame-left-hover border-primary p-2.5 flex w-fit justify-center">
+              <button className=" bg-primary px-5 py-3 text-4xl cursor-pointer font-semibold text-secondary flex items-end">
+                View case
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          style={{ ["--vaulto" as any]: `url(${VaultoBg})` }}
+          className="flex flex-col h-fit w-full gap-8 p-8 bg-cover bg-center
+             [background-image:var(--vaulto)]"
+        >
+          <div className="flex items-center font-display text-4xl font-bold">
+            <img src={Chevron} alt="Chevron" className="h-8 w-auto" />
+            <h3>Vaulto</h3>
+          </div>
+          <img
+            className="h-96 md:h-96 w-auto self-center"
+            src={VaultoMockup}
+            alt="vaulto case thumbnail"
+          />
+          <div className="flex justify-end">
+            <div className="corner-frame-left corner-frame-left-hover border-primary p-2.5 flex w-fit justify-center">
+              <button className=" bg-primary px-5 py-3 text-4xl cursor-pointer font-semibold text-secondary flex items-end">
+                View case
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
       <section
         id="skills"

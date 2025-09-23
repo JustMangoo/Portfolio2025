@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import Home from "./pages/Home";
-import Case from "./pages/Case";
+import CasePage from "./pages/CasePage";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Home /> },
-      { path: "case/:id", element: <Case /> },
+      { path: "/cases/:slug", element: <CasePage /> },
       { path: "*", element: <div>Not found</div> }, // fallback 404
     ],
   },

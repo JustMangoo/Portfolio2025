@@ -124,4 +124,27 @@ body {
   .corner-frame-top-hover:hover {
     --len: 1rem;
   }
+
+  .corner-frame-left {
+    --len: 1rem;
+    --thick: 4px;
+    background-repeat: no-repeat;
+    background-image:
+      /* top-left */ linear-gradient(
+        currentColor,
+        currentColor
+      ),
+      linear-gradient(currentColor, currentColor),
+      /* bottom-left */ linear-gradient(currentColor, currentColor),
+      linear-gradient(currentColor, currentColor);
+
+    background-size: var(--len) var(--thick), var(--thick) var(--len),
+      var(--len) var(--thick), var(--thick) var(--len);
+    background-position: left top, left top, left bottom, left bottom;
+    transition: background-size 0.15s ease-in-out;
+  }
+
+  .corner-frame-left-hover:hover {
+    --len: 1.3rem;
+  }
 }
