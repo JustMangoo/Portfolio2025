@@ -7,7 +7,6 @@ import ArrowDown from "../assets/icons/Arrow-down.svg";
 const customPages: Record<string, React.FC | undefined> = {
   vaulto: VaultoCase,
   pegazapagalms: PegazaCase,
-  artis: VaultoCase,
 };
 
 export default function CasePage() {
@@ -34,7 +33,9 @@ export default function CasePage() {
         className="mb-8 h-72 bg-cover bg-center [background-image:var(--bg)]"
       />
       <header className="mb-32 flex flex-col gap-8 justify-center">
-        <h1 className="text-9xl font-bold uppercase text-center">{p.title}</h1>
+        <h1 className="text-6xl md:text-9xl font-bold uppercase text-center">
+          {p.title}
+        </h1>
         <div className="mt-4 grid grid-cols-2 gap-y-8 lg:flex gap-4 text-2xl justify-between">
           {p.roles?.length ? (
             <div>

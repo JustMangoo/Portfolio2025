@@ -55,30 +55,39 @@ export default function Home() {
     <>
       <section
         id="hero"
-        className="h-screen font-display font-bold uppercase flex flex-col justify-between p-16"
+        className="h-screen font-display font-bold uppercase flex flex-col justify-between p-2 md:p-16"
       >
         <header>
           <h1 className="m-0 leading-[0.8]">
-            <span className="block text-8xl">Aleksis</span>
-            <span className="block text-7xl -mt-2 md:-mt-3">Daugats</span>
+            <span className="block text-5xl md:text-8xl">Aleksis</span>
+            <span className="block text-4xl md:text-7xl -mt-2 md:-mt-3">
+              Daugats
+            </span>
           </h1>
         </header>
 
-        <footer className="flex justify-between items-end">
-          <div>
+        <footer className="flex justify-between items-end ">
+          <div className="hidden md:flex flex-col">
             <p className="m-0">[ {time} ]</p>
-            <p className="m-0">Aarhus, Denmark</p>
+            <p className="m-0 ">Aarhus, Denmark</p>
+          </div>
+
+          <div className="flex md:hidden flex-col">
+            <p className="m-0">[ {time} ]</p>
+            <p className="m-0 ">Aarhus, DK</p>
           </div>
 
           <h2 className="m-0 leading-[0.8] text-right">
-            <span className="block text-8xl">Web</span>
-            <span className="block text-7xl -mt-2 md:-mt-3">Designer</span>
+            <span className="block text-5xl md:text-8xl">Web</span>
+            <span className="block text-4xl md:text-7xl -mt-2 md:-mt-3">
+              Developer
+            </span>
           </h2>
         </footer>
       </section>
       <section
         id="about"
-        className="py-32 px-2 sm:px-8 lg:px-16 flex justify-center items-center gap-2"
+        className="py-16 md:py-32 px-2 md:px-4 lg:px-16 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-2"
       >
         <img src={ProfileImage} alt="Profile Image" className="h-64" />
         <div className=" text-xl flex flex-col max-w-2xl gap-5">
@@ -97,10 +106,10 @@ export default function Home() {
       </section>
       <section
         id="works"
-        className="flex flex-col justify-center items-center py-16"
+        className="flex flex-col justify-center items-center py-8 gap-8"
       >
         <header>
-          <h2 className="text-9xl font-display font-bold text-primary uppercase">
+          <h2 className="text-6xl md:text-9xl font-display font-bold text-primary uppercase">
             Works
           </h2>
         </header>
@@ -113,10 +122,10 @@ export default function Home() {
       </section>
       <section
         id="skills"
-        className=" flex flex-col p-8 lg:p-16 justify-center items-center  w-full"
+        className=" flex flex-col gap-8 p-8 lg:p-16 justify-center items-center  w-full"
       >
         <header>
-          <h2 className="text-9xl font-display font-bold text-primary uppercase">
+          <h2 className="text-6xl md:text-9xl font-display font-bold text-primary uppercase ">
             Skills
           </h2>
         </header>
@@ -143,14 +152,14 @@ export default function Home() {
       </section>
       <footer
         id="connect"
-        className="font-display flex flex-col gap-32 p-16 pt-32"
+        className="font-display flex flex-col gap-32 p-8 md:p-16 pt-32"
       >
         <div className="flex flex-col justify-center items-center gap-2">
           <div className="corner-frame-top corner-frame-top-hover border-primary p-2.5 pb-0 flex w-fit justify-center">
             <a
               href="mailto:daugatsa@gmail.com"
               target="_blank"
-              className="bg-primary px-5 py-3 text-4xl cursor-pointer font-semibold text-secondary"
+              className="bg-primary px-5 py-3 text-2xl md:text-4xl cursor-pointer font-semibold text-secondary"
             >
               Click to Connect
             </a>
