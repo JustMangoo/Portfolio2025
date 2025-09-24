@@ -90,6 +90,19 @@ export default function VaultoCase() {
           scalable technical setup.
         </p>
       </div>
+      <div className="flex flex-col gap-4 ">
+        <p className="font-display font-bold text-2xl">
+          GItHub:{" "}
+          <a
+            href="https://github.com/JustMangoo/Vaulto"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2 font-normal"
+          >
+            github.com/JustMangoo/Vaulto
+          </a>
+        </p>
+      </div>
     </section>
   );
 }
