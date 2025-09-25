@@ -59,7 +59,7 @@ export default function Home() {
       >
         <header>
           <h1 className="m-0 leading-[0.8]">
-            <span className="block text-5xl md:text-8xl">Aleksis</span>
+            <span className="block text-5xl md:text-8xl">Aleksissss</span>
             <span className="block text-4xl md:text-7xl -mt-2 md:-mt-3">
               Daugats
             </span>
