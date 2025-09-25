@@ -1,51 +1,23 @@
-name: Deploy to Simply.com (FTP)
-
+name: Deploy (SFTP)
 on:
   push:
-    branches: [main] # ← change if your default branch is different
-  workflow_dispatch: # allow manual runs
-
-concurrency:
-  group: deploy-${{ github.ref }}
-  cancel-in-progress: true
-
+    branches: [ main ]
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-
-      - name: Use Node.js 20
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm ci && npm run build
+      # Upload the built Vite site to public_html
+      - name: SFTP deploy
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          node-version: 20
-          cache: "npm"
-
-      - name: Install deps
-        run: npm ci
-
-      - name: Build (Vite)
-        run: npm run build
-        # If your project is in a subfolder, add:
-        # working-directory: ./path/to/app
-
-      # Optional: upload build as artifact (handy for debugging)
-      - name: Upload dist artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: dist
-
-      - name: Deploy via FTP to Simply.com
-        uses: SamKirkland/FTP-Deploy-Action@v4
-        with:
-          server: ${{ secrets.FTP_HOST }} # e.g. ftp.simply.com
-          username: ${{ secrets.FTP_USERNAME }} # e.g. your ftp user
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp # try 'ftps' if your plan supports it
-          local-dir: dist/
-          server-dir: /public_html/ # root for main domain on Simply.com
-          dangerous-clean-slate: false # keeps files not in dist (safer)
-          timeout: 60000 # 60s timeout
+          server: ${{ secrets.SFTP_HOST }}   # e.g. yourdomain.com
+          port: 22
+          username: ${{ secrets.SFTP_USER }} # your FTP/SSH username
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          local_path: dist/
+          remote_path: public_html/
+          delete_remote_files: false
