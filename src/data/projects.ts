@@ -12,8 +12,8 @@ export type Project = {
 };
 
 // assets
-import VaultoBg from "../assets/images/Vaulto-bg.png";
-import VaultoMock from "../assets/images/Vaulto-mockup.png";
+import VaultoBg from "../assets/images/vaulto-bg.png";
+import VaultoMock from "../assets/images/vaulto-mockup.png";
 import PegazaBg from "../assets/images/Pegaza-bg.png";
 import PegazaMock from "../assets/images/Pegaza-mockup.png";
 import ArtBg from "../assets/images/Art-bg.png";

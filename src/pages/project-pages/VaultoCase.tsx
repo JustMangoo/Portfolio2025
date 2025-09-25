@@ -1,4 +1,4 @@
-import VaultoRoadmap from "../../assets/images/Vaulto-roadmap.png";
+import VaultoRoadmap from "../../assets/images/vaulto-roadmap.png";
 import VaultoHero from "../../assets/images/vaulto-hero.png";
 import VaultoAssets from "../../assets/images/vaulto-assets.png";
 
