@@ -39,12 +39,6 @@ export default function HeroInteractive({
   const clickedRef = useRef(false);
   const resetAllRef = useRef(false);
 
-  const totalDots = layout.rows * layout.cols;
-  const indices = useMemo(
-    () => Array.from({ length: totalDots }, (_, i) => i),
-    [totalDots]
-  );
-
   // Measure and compute rows/cols to fit the container
   const recomputeLayout = () => {
     const host = wrapRef.current?.closest("section#hero") as HTMLElement | null;
