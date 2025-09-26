@@ -2,6 +2,7 @@ import Chevron from "../assets/icons/Chevron.svg";
 import ProfileImage from "../assets/images/profile-image.png";
 import { projects } from "../data/projects";
 import WorkCard from "../components/WorkCard";
+import HeroInteractive from "../components/HeroInteractive";
 
 import { useEffect, useState } from "react";
 
@@ -65,6 +66,18 @@ export default function Home() {
             </span>
           </h1>
         </header>
+
+        {/* --- Interactive center --- */}
+        <div className="absolute inset-0 w-full h-full opacity-30 pointer-events-none">
+          <HeroInteractive
+            autoFit
+            gap={52}
+            size={15}
+            pullDistance={75}
+            className="w-full h-full"
+          />
+        </div>
+        {/* --------------------------- */}
 
         <footer className="flex justify-between items-end ">
           <div className="hidden md:flex flex-col">
@@ -141,7 +154,10 @@ export default function Home() {
               </div>
               <ul className="flex flex-col gap-5 ">
                 {item.skills.map((skill) => (
-                  <li className="text-3xl font-semibold justify-center items-center flex self-stretch border-4 border-primary">
+                  <li
+                    key={skill}
+                    className="text-3xl font-semibold justify-center items-center flex self-stretch border-4 border-primary"
+                  >
                     <p>{skill}</p>
                   </li>
                 ))}
