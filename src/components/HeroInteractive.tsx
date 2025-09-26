@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 type DotEl = HTMLDivElement;
@@ -9,7 +9,7 @@ type Props = {
   gap?: number;
   size?: number;
   pullDistance?: number;
-  autoFit?: boolean; // NEW: compute rows/cols from available space
+  autoFit?: boolean;
   className?: string;
 };
 
@@ -117,19 +117,21 @@ export default function HeroInteractive({
     setMounted(true);
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    // wait for commit + paint
+    const id1 = requestAnimationFrame(() => {
+      updateCenters();
+
+      // store nested id if you want to cancel both (optional)
+    });
+    return () => {
+      cancelAnimationFrame(id1);
+    };
+  }, [layout.rows, layout.cols, layout.padX, layout.padY, gap, size]);
+
+  useLayoutEffect(() => {
     if (!mounted) return;
 
-    // Observe hero size to recompute fit + centers
-    const hero = wrapRef.current?.closest("section#hero") as HTMLElement | null;
-    const ro = new ResizeObserver(() => {
-      recomputeLayout();
-      // wait a frame for DOM to render new grid, then recalc centers
-      requestAnimationFrame(() => updateCenters());
-    });
-    if (hero) ro.observe(hero);
-
-    // initial
     recomputeLayout();
     requestAnimationFrame(() => updateCenters());
 
@@ -139,7 +141,6 @@ export default function HeroInteractive({
     window.addEventListener("pointerleave", onPointerLeave);
 
     return () => {
-      ro.disconnect();
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("pointerleave", onPointerLeave);
       gsap.killTweensOf(dotRefs.current);
@@ -152,11 +153,6 @@ export default function HeroInteractive({
     if (!el) return;
     dotRefs.current[i] = el;
   };
-
-  // Clear refs when layout changes to avoid stale nodes
-  useEffect(() => {
-    dotRefs.current = [];
-  }, [layout.rows, layout.cols]);
 
   return (
     <div
