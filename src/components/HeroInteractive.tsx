@@ -178,7 +178,7 @@ export default function HeroInteractive({
                 <div
                   key={i}
                   ref={(el) => setDotRef(el, i)}
-                  className=" rounded-full bg-primary"
+                  className="bg-primary"
                   style={{
                     width: `${size}px`,
                     height: `${size}px`,
