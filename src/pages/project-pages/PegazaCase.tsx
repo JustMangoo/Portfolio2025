@@ -5,6 +5,19 @@ import PegazaMobile from "../../assets/images/pegaza-mobile.png";
 export default function PegazaCase() {
   return (
     <section className="prose prose-invert max-w-none flex flex-col gap-16 font-regular">
+      <div className="flex flex-col gap-4 ">
+        <p className="font-display font-bold text-2xl">
+          Live site:{" "}
+          <a
+            href="https://www.pegazapagalms.lv/en"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2 font-normal"
+          >
+            pegazapagalms.lv/en
+          </a>
+        </p>
+      </div>
       <div className="flex flex-col gap-4">
         <h3 className="font-display font-bold text-2xl">Overview</h3>
         <p>
@@ -67,19 +80,6 @@ export default function PegazaCase() {
           <li>Clear bilingual navigation</li>
           <li>Simpler maintenance vs. old WP stack</li>
         </ul>
-      </div>
-      <div className="flex flex-col gap-4 ">
-        <p className="font-display font-bold text-2xl">
-          Live site:{" "}
-          <a
-            href="https://www.pegazapagalms.lv/en"
-            target="_blank"
-            rel="noreferrer"
-            className="underline underline-offset-2 font-normal"
-          >
-            pegazapagalms.lv/en
-          </a>
-        </p>
       </div>
     </section>
   );

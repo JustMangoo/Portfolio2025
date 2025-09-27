@@ -178,12 +178,11 @@ export default function HeroInteractive({
                 <div
                   key={i}
                   ref={(el) => setDotRef(el, i)}
-                  className="pointer-events-auto rounded-full bg-primary"
+                  className=" rounded-full bg-primary"
                   style={{
                     width: `${size}px`,
                     height: `${size}px`,
                     willChange: "transform",
-                    cursor: "pointer",
                   }}
                 />
               );

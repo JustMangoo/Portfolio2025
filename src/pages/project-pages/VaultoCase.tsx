@@ -5,6 +5,19 @@ import VaultoAssets from "../../assets/images/vaulto-assets.png";
 export default function VaultoCase() {
   return (
     <section className="prose prose-invert max-w-none flex flex-col gap-16 font-regular">
+      <div className="flex flex-col gap-4 ">
+        <p className="font-display font-bold text-2xl">
+          GitHub:{" "}
+          <a
+            href="https://github.com/JustMangoo/Vaulto"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2 font-normal"
+          >
+            github.com/JustMangoo/Vaulto
+          </a>
+        </p>
+      </div>
       <div className="flex flex-col gap-4">
         <h3 className="font-display font-bold text-2xl">Overview</h3>
         <p>
@@ -88,19 +101,6 @@ export default function VaultoCase() {
           shape their inspirations. Even with just the landing page, it
           demonstrates strong visual identity, thoughtful problem framing, and a
           scalable technical setup.
-        </p>
-      </div>
-      <div className="flex flex-col gap-4 ">
-        <p className="font-display font-bold text-2xl">
-          GItHub:{" "}
-          <a
-            href="https://github.com/JustMangoo/Vaulto"
-            target="_blank"
-            rel="noreferrer"
-            className="underline underline-offset-2 font-normal"
-          >
-            github.com/JustMangoo/Vaulto
-          </a>
         </p>
       </div>
     </section>
