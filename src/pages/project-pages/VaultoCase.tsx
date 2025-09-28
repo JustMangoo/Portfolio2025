@@ -7,6 +7,17 @@ export default function VaultoCase() {
     <section className="prose prose-invert max-w-none flex flex-col gap-16 font-regular">
       <div className="flex flex-col gap-4 ">
         <p className="font-display font-bold text-2xl">
+          Live site:{" "}
+          <a
+            href="http://vaulto.me"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2 font-normal"
+          >
+            vaulto.me
+          </a>
+        </p>
+        <p className="font-display font-bold text-2xl">
           GitHub:{" "}
           <a
             href="https://github.com/JustMangoo/Vaulto"
