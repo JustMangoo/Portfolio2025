@@ -3,7 +3,7 @@ import ProfileImage from "../assets/images/profile-image.png";
 import { projects } from "../data/projects";
 import WorkCard from "../components/WorkCard";
 import HeroInteractive from "../components/HeroInteractive";
-
+import ScrambleText from "../components/ScrambleText";
 import { useEffect, useState } from "react";
 
 function useClock() {
@@ -92,9 +92,7 @@ export default function Home() {
 
           <h2 className="m-0 leading-[0.8] text-right">
             <span className="block text-5xl md:text-8xl">Web</span>
-            <span className="block text-4xl md:text-7xl -mt-2 md:-mt-3">
-              Developer
-            </span>
+            <ScrambleText />
           </h2>
         </footer>
       </section>
