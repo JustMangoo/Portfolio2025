@@ -6,7 +6,7 @@ export default function VaultoCase() {
   return (
     <section className="prose prose-invert max-w-none flex flex-col gap-16 font-regular">
       <div className="flex flex-col gap-4 ">
-        <p className="font-display font-bold text-2xl">
+        {/* <p className="font-display font-bold text-2xl">
           Live site:{" "}
           <a
             href="http://vaulto.me"
@@ -16,7 +16,7 @@ export default function VaultoCase() {
           >
             vaulto.me
           </a>
-        </p>
+        </p> */}
         <p className="font-display font-bold text-2xl">
           GitHub:{" "}
           <a
